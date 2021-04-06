@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>VMN Connects</title>
+		<!-- UIkit CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/css/uikit.min.css"
+		/>
+
+		<link rel="stylesheet" href="/styles.css" />
+	</head>
+
+	<body>
+		<div class="uk-container">
+			<div
+				class="uk-position-relative uk-visible-toggle uk-light"
+				tabindex="-1"
+				uk-slider="center: true"
+			>
+				<ul
+					id="slider"
+					class="uk-slider-items uk-grid uk-grid-match"
+					uk-height-viewport="offset-top: true; offset-bottom: 30"
+				></ul>
+
+				<a
+					class="uk-position-center-left uk-position-small uk-hidden-hover"
+					href="#"
+					uk-slidenav-previous
+					uk-slider-item="previous"
+				></a>
+				<a
+					class="uk-position-center-right uk-position-small uk-hidden-hover"
+					href="#"
+					uk-slidenav-next
+					uk-slider-item="next"
+				></a>
+			</div>
+
+			<!-- <div
+				class="uk-position-relative uk-visible-toggle uk-light "
+				tabindex="-1"
+				uk-slider="center: true"
+			>
+				<ul id="slider1" class="uk-slider-items uk-grid">
+					
+				</ul>
+
+				<a
+					class="uk-position-center-left uk-position-small uk-hidden-hover"
+					href="#"
+					uk-slidenav-previous
+					uk-slider-item="previous"
+				></a>
+				<a
+					class="uk-position-center-right uk-position-small uk-hidden-hover"
+					href="#"
+					uk-slidenav-next
+					uk-slider-item="next"
+				></a>
+			</div> -->
+		</div>
+		<!-- UIkit JS -->
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/js/uikit.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/js/uikit-icons.min.js"></script>
+
+		<script>
+			let url = `https://www.reddit.com/r/itookapicture/top.json`;
+
+			const getFeed = async () => {
+				const feed = await fetchData(url);
+
+				let sliderDiv = document.getElementById("slider");
+
+				for (let i = 0; i < feed.length; i++) {
+					const element = feed[i];
+					sliderDiv.innerHTML += `
+					<li class="uk-width-1-1 uk-flex uk-flex-middle">
+						<img src="${element.url}" alt="" style="
+    object-fit: contain;
+    height: 80vh;
+"/>
+					</li>
+					`;
+				}
+				console.log(feed);
+			};
+
+			const fetchData = async url => {
+				let res = await fetch(url);
+				let result = await res.json();
+				console.log(result);
+				return extractor(result);
+			};
+
+			const extractor = feed => {
+				const norm = (value, min, max) => {
+					return ((value - min) / (max - min)) * 100;
+				};
+
+				const postScore = post => {
+					let score = parseInt(post.ups, 10);
+					score += parseInt(post.num_comments, 10) * 2;
+					return norm(score, 0, post.subreddit_subscribers).toFixed(4);
+				};
+
+				const compare = (a, b) => {
+					if (a.score > b.score) return -1;
+					if (a.score < b.score) return 1;
+					return 0;
+				};
+
+				const getMediaFromUrl = post => {
+					try {
+						let domain = post.domain;
+						let url = post.url || "";
+
+						switch (domain) {
+							case "gfycat.com":
+								url = url.replace(/\gfycat.com/gi, "giant.gfycat.com");
+								url += ".mp4";
+								break;
+
+							case "i.imgur.com":
+								url = url.replace(/\.gifv/gi, ".mp4");
+								break;
+
+							case "v.redd.it":
+								url = url + ".mp4";
+								break;
+
+							default:
+								break;
+						}
+
+						if (post.subreddit === "Cinemagraphs") {
+							url = url.replace(/\.mp4/gi, ".gif");
+						}
+
+						return url;
+					} catch (error) {
+						return error;
+					}
+				};
+
+				try {
+					let data = feed.data.children;
+
+					let posts = [];
+
+					for (let key in data) {
+						let child = data[key].data;
+
+						let post = {
+							id: child.id,
+							title: child.title,
+							selftext: child.selftext,
+							link_flair_type: child.link_flair_type,
+							subreddit: child.subreddit,
+							domain: child.domain,
+							upvotes: child.ups,
+							author: child.author.replace(/(\_)/gim, " "),
+							comments: child.num_comments,
+							permalink: child.permalink,
+							type: child.post_hint,
+							gilding: child.gildings.gid_1,
+							url: getMediaFromUrl(child),
+							score: postScore(child),
+						};
+
+						if (
+							child.domain == "v.redd.it" &&
+							child.crosspost_parent_list &&
+							child.crosspost_parent_list[0].secure_media
+						) {
+							post.url =
+								child.crosspost_parent_list[0].secure_media.reddit_video
+									.scrubber_media_url || "";
+							post.type = "video";
+						}
+
+						posts.push(post);
+					}
+
+					posts.sort(compare);
+					// console.log('posts: ' + JSON.stringify(posts));
+					return posts;
+				} catch (error) {
+					return error;
+				}
+			};
+
+			getFeed();
+		</script>
+	</body>
+</html>

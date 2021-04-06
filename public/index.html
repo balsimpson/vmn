@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>VMN Connects</title>
+		<!-- UIkit CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/css/uikit.min.css"
+		/>
+		<!-- Font Awesome -->
+		<script
+			src="https://kit.fontawesome.com/34356f09a5.js"
+			crossorigin="anonymous"
+		></script>
+		<link rel="stylesheet" href="/styles.css" />
+	</head>
+
+	<body>
+		<!-- nav bar -->
+		<nav class="uk-container" uk-navbar>
+			<div class="uk-navbar-left uk-margin-large-top uk-margin-large-bottom">
+				<!-- <ul class="uk-navbar-nav"> -->
+				<!-- <li class=""> -->
+				<a href="#">
+					<img src="/img/logo.png" alt="" style="width: 80%" />
+				</a>
+				<!-- </li> -->
+				<!-- </ul> -->
+			</div>
+
+			<div class="uk-navbar-right uk-margin-large-top uk-margin-large-bottom">
+				<ul class="uk-navbar-nav">
+					<li>
+						<!-- <a class="btn-login" href="#">Student Login</a> -->
+						<div class="btn btn-login" href="#">
+							Student Login<span uk-icon="sign-in"></span>
+						</div>
+					</li>
+					<!-- <li>
+						<a href="#" uk-icon="user"></a>
+						<div class="uk-navbar-dropdown" uk-dropdown="offset: 0">
+							<ul class="uk-nav uk-navbar-dropdown-nav">
+								<li><a href="#">Sign in</a></li>
+								<li><a href="#">Profile</a></li>
+							</ul>
+						</div>
+					</li> -->
+				</ul>
+			</div>
+		</nav>
+
+		<!-- hero slider -->
+		<div class="uk-container">
+			<div
+				id="slider"
+				class="uk-position-relative uk-visible-toggle uk-light"
+				tabindex="-1"
+				uk-slideshow
+			>
+				<ul class="uk-slideshow-items uk-border-rounded">
+					<li>
+						<div class="uk-panel">
+							<img
+								src="https://source.unsplash.com/PkS3hCZmYts"
+								alt=""
+								style="
+									height: 100%;
+									width: 100%;
+									object-fit: cover;
+									border-radius: 10px 10px 0 0;
+								"
+							/>
+							<div class="uk-position-bottom-left uk-panel">
+								<div
+									style="
+										/* background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(0,0,0,1)); */
+										/* height: 100px; */
+										text-align: left;
+										margin: 0 0 0 100px;
+										padding: 30px;
+										width: 260px;
+										background-color: rgba(0, 0, 0, 0.3);
+										color: white;
+									"
+								>
+									<div class="hero-headline">
+										study abroad the easy way
+									</div>
+									
+									<div class="hero-subtitle">With over 1000 admissions in over 30 countries over 10 years, we have a track record of finding the best course for you.</div>
+
+									<a class="btn btn-hero" href="#modal-full" uk-toggle>
+										<span class="uk-margin-small-right">Learn more</span>
+										<i class="fas fa-chevron-circle-right"></i
+									></a>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li>
+						<img
+							src="https://source.unsplash.com/random/?study"
+							alt=""
+							uk-cover
+						/>
+					</li>
+					<li>
+						<img
+							src="https://source.unsplash.com/random/?study"
+							alt=""
+							uk-cover
+						/>
+					</li>
+				</ul>
+
+				<a
+					class="uk-position-center-left uk-position-small uk-hidden-hover"
+					href="#"
+					uk-slidenav-previous
+					uk-slideshow-item="previous"
+				></a>
+				<a
+					class="uk-position-center-right uk-position-small uk-hidden-hover"
+					href="#"
+					uk-slidenav-next
+					uk-slideshow-item="next"
+				></a>
+			</div>
+		</div>
+
+		<!-- news ticker -->
+		<div
+			class="uk-container uk-text-center uk-animation-slide-bottom-small uk-padding-large"
+		>
+			<div>Latest News</div>
+			<div class="news-ticker">Registrations now open at Kent University.</div>
+		</div>
+
+		<div class="uk-section uk-container uk-text-center">
+			<div class="section-header">Our Services</div>
+			<div class="section-subtitle">
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt eaque
+				in cupiditate nesciunt id adipisci nisi et corporis ut porro?
+			</div>
+			<div
+				class="uk-grid-small uk-child-width-expand@s uk-text-center uk-margin-medium-top"
+				uk-grid
+			>
+				<div>
+					<div class="uk-card uk-card-default uk-card-body card-service">
+						<div class="card-service-title">Headline</div>
+						<div class="card-service-txt">
+							Our journey starts with a friendly discussion on the students
+							interest and ambitions. We looks into the students qualification,
+							background and the ambition to give them the right road map
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="uk-card uk-card-default uk-card-body card-service">
+						<div>Headline</div>
+						<div>
+							Our journey starts with a friendly discussion on the students
+							interest and ambitions. We looks into the students qualification,
+							background and the ambition to give them the right road map
+						</div>
+					</div>
+				</div>
+				<div>
+					<div class="uk-card uk-card-default uk-card-body card-service">
+						<div>Headline</div>
+						<div>
+							Our journey starts with a friendly discussion on the students
+							interest and ambitions. We looks into the students qualification,
+							background and the ambition to give them the right road map
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<div class="uk-margin-large-top">
+					This is dummy copy. Please do not waste your time reading it. Really,
+					this is just dummy copy. Please do not waste your time reading it.
+				</div>
+				<a href="#modal-full" uk-toggle class="btn btn-outline btn-dark"
+					>learn more</a
+				>
+			</div>
+		</div>
+
+		<!-- section - search -->
+		<div class="uk-section section-search">
+			<div class="uk-container uk-text-center">
+				<div class="uk-light">
+					<div class="uk-text-large uk-text-bold uk-light uk-margin-top">
+						FIND A COURSE
+					</div>
+					<div style="padding: 0 20px">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					</div>
+					<form class="uk-search uk-search-large search-box uk-margin">
+						<span uk-search-icon></span>
+						<input
+							class="uk-search-input"
+							type="search"
+							placeholder="Search course"
+						/>
+					</form>
+				</div>
+
+				<div class="uk-light" style="padding: 40px">
+					<div class="uk-text-large uk-text-bold uk-light uk-margin-top">
+						PARTNER UNIVERSITIES
+					</div>
+					<div style="padding: 0 20%">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem veniam
+						distinctio praesentium dolore iusto voluptatum exercitationem,
+						tempore est minima eveniet.
+					</div>
+				</div>
+			</div>
+
+			<div class="uk-container">
+				<div
+					class="uk-position-relative uk-visible-toggle uk-light"
+					tabindex="-1"
+					uk-slider="autoplay: true"
+				>
+					<ul
+						id="partnerUniversities"
+						class="uk-slider-items uk-child-width-1-2 uk-child-width-1-4@m uk-grid uk-grid-match"
+					></ul>
+
+					<a
+						class="uk-position-center-left uk-position-small uk-hidden-hover"
+						href="#"
+						uk-slidenav-previous
+						uk-slider-item="previous"
+					></a>
+					<a
+						class="uk-position-center-right uk-position-small uk-hidden-hover"
+						href="#"
+						uk-slidenav-next
+						uk-slider-item="next"
+					></a>
+				</div>
+			</div>
+		</div>
+
+		<!-- section - testimonials -->
+		<div class="uk-section section-testimonials">
+			<div class="uk-container uk-text-center">
+				<div class="uk-text-large uk-text-bold">Testimonials</div>
+				<div class="section-subtitle">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam vero
+					saepe nihil incidunt laboriosam facere assumenda hic distinctio.
+				</div>
+			</div>
+
+			<div uk-slider="center: true; autoplay: true">
+				<div
+					class="uk-position-relative uk-visible-toggle uk-light uk-padding"
+					tabindex="-1"
+				>
+					<ul
+						id="testimonials"
+						class="uk-slider-items uk-child-width-1-2 uk-child-width-1-3@s uk-child-width-1-3@m uk-grid uk-grid-match"
+					></ul>
+
+					<a
+						class="uk-position-center-left uk-position-small uk-hidden-hover"
+						href="#"
+						uk-slidenav-previous
+						uk-slider-item="previous"
+					></a>
+					<a
+						class="uk-position-center-right uk-position-small uk-hidden-hover"
+						href="#"
+						uk-slidenav-next
+						uk-slider-item="next"
+					></a>
+				</div>
+
+				<ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+			</div>
+		</div>
+
+		<!-- section - social media -->
+		<div
+			class="uk-section section-social-media section-header__light uk-text-center"
+		>
+			<div class="uk-container-xsmall uk-width-expand">
+				<div>
+					<div class="uk-text-large uk-text-uppercase uk-text-bold">
+						Follow Us
+					</div>
+
+					<div class="uk-text-large">
+						<i class="fab fa-facebook"></i>
+						<i class="fab fa-twitter"></i>
+						<i class="fab fa-instagram fa-lg"></i>
+					</div>
+					<div class="uk-text-uppercase uk-margin-small-top">
+						Subscribe to our newsletter
+					</div>
+					<div class="uk-margin-small-bottom">
+						Keep yourself updated with the latest news from VMN
+					</div>
+					<div>
+						<input
+							class="uk-input uk-border-pill uk-text-center"
+							type="text"
+							style="width: 40%"
+							placeholder="Your email id"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- footer -->
+		<footer class="uk-margin-large-top">
+			<div class="uk-section">
+				<div class="uk-container uk-text-center">
+					<span class="footer-item">ABOUT US</span> |
+					<span class="footer-item">PRIVACY</span> |
+					<span class="footer-item">SITEMAP</span> |
+					<span class="footer-item">FAQ</span>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Student enquiry form -->
+		<!-- <a class="uk-button uk-button-default" href="#modal-full" uk-toggle>Open</a> -->
+
+		<!-- Student enquiry form -->
+		<div id="modal-full" class="uk-flex-top" uk-modal>
+			<div class="uk-modal-dialog uk-margin-auto-vertical">
+				<button class="uk-modal-close-default" type="button" uk-close></button>
+				<div class="uk-modal-header" style="border-radius: 20px 20px 0 0">
+					<img src="/img/logo.png" alt="" style="width: 20%" />
+				</div>
+				<div class="uk-modal-body">
+					<form class="uk-form-stacked uk-padding-large">
+						<div>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+							eiusmod tempor incididunt.
+						</div>
+
+						<div class="uk-margin">
+							<label class="uk-form-label" for="form-stacked-text"
+								>Your name</label
+							>
+							<div class="uk-form-controls">
+								<input
+									class="uk-input uk-border-pill"
+									id="form-stacked-text"
+									type="text"
+									placeholder="Name"
+								/>
+							</div>
+						</div>
+
+						<div class="uk-margin">
+							<label class="uk-form-label" for="form-stacked-text"
+								>Your email id</label
+							>
+							<div class="uk-form-controls">
+								<input
+									class="uk-input uk-border-pill"
+									id="form-stacked-email"
+									type="email"
+									placeholder="Email"
+								/>
+							</div>
+						</div>
+
+						<div class="uk-margin">
+							<label class="uk-form-label" for="form-stacked-select"
+								>Course Level</label
+							>
+							<div class="uk-form-controls">
+								<select
+									class="uk-select uk-border-pill"
+									id="form-stacked-select"
+								>
+									<option>College</option>
+									<option>Masters</option>
+									<option>Specialisation</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="interests">
+							<div class="uk-padding-large">
+								Choose your areas of interest. You can choose more than one.
+							</div>
+							<span class="tag">Architecture</span>
+							<span class="tag">Building and Planning</span>
+							<span class="tag">Art and Design</span>
+							<span class="tag">Business and Management Commerce</span>
+							<span class="tag">Computer Science and IT</span>
+							<span class="tag">Culinary Arts</span>
+							<span class="tag">Education and Training</span>
+							<span class="tag">Engineering</span>
+							<span class="tag">Hair, Beauty and Personal Care</span>
+							<span class="tag">Health Sciences</span>
+							<span class="tag">Healthcare and Medicine</span>
+							<span class="tag">Humanities</span>
+							<span class="tag">Information Science and Mathematics</span>
+							<span class="tag">Land and Environment</span>
+							<span class="tag">Language Programmes</span>
+							<span class="tag">Law Media/Journalism/Communication</span>
+							<span class="tag">Military Studies</span>
+							<span class="tag">Music, Dance and Performing Arts</span>
+							<span class="tag">Nursing</span>
+							<span class="tag">Science and Mathematics</span>
+							<span class="tag">Social Studies and Communication</span>
+							<span class="tag">Sports</span>
+							<span class="tag">Travel</span>
+							<span class="tag">Tourism and Hospitality</span>
+							<span class="tag">Vocational Courses</span>
+							<span class="tag">Accounting and Marketing</span>
+							<span class="tag">Agriculture</span>
+						</div>
+					</form>
+				</div>
+				<div class="uk-modal-footer uk-text-center uk-flex uk-flex-between">
+					<button
+						class="uk-button uk-button-default uk-modal-close"
+						type="button"
+					>
+						Cancel
+					</button>
+					<button class="uk-button uk-button-primary" type="button">
+						Submit
+					</button>
+				</div>
+			</div>
+		</div>
+
+		<!-- University information -->
+		<div id="modal-university" class="uk-modal-full" uk-modal>
+			<div class="uk-modal-dialog">
+				<button
+					class="uk-modal-close-full uk-close-large"
+					type="button"
+					uk-close
+				></button>
+				<div
+					class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle"
+					uk-grid
+				>
+					<div
+						class="uk-background-cover"
+						style="
+							background-image: url('https://source.unsplash.com/GvPceVqbxm4');
+						"
+						uk-height-viewport
+					></div>
+					<div class="uk-padding-large uk-text-center">
+						<h1>Cardiff Metropolitan University</h1>
+						<p>
+							The University traces its history back to 1865, when the School of
+							Art first opened in the Old Free Library in Cardiff. Since then,
+							it has developed into a university providing practice-focused and
+							professionally oriented education to students from around the
+							globe.
+						</p>
+						<div class="uk-flex uk-flex-center uk-flex-middle uk-flex-left">
+							<div class="uk-padding-small">
+								<div
+									class="uk-text-uppercase uk-text-small uk-text-center"
+									style="line-height: 1"
+								>
+									<span style="font-size: 10px; font-weight: 400"
+										>Quality of</span
+									>
+									<br />
+									<span style="font-size: 14px; font-weight: 600"
+										>Education</span
+									>
+								</div>
+								<i class="fas fa-leaf"></i>
+								<i class="fas fa-leaf"></i>
+								<i class="fas fa-leaf"></i>
+								<i class="fas fa-leaf"></i>
+								<i style="opacity: 0.5" class="fas fa-leaf"></i>
+							</div>
+
+							<div class="uk-padding-small">
+								<div
+									class="uk-text-uppercase uk-text-small uk-text-center"
+									style="line-height: 1"
+								>
+									<span style="font-size: 10px; font-weight: 400">Cost of</span>
+									<br />
+									<span style="font-size: 14px; font-weight: 600">Living</span>
+								</div>
+								<i class="fas fa-leaf"></i>
+								<i class="fas fa-leaf"></i>
+								<i class="fas fa-leaf"></i>
+								<i style="opacity: 0.5" class="fas fa-leaf"></i>
+								<i style="opacity: 0.5" class="fas fa-leaf"></i>
+							</div>
+
+							<div class="uk-padding-small">
+								<div
+									class="uk-text-uppercase uk-text-small uk-text-center"
+									style="line-height: 1"
+								>
+									<span style="font-size: 10px; font-weight: 400">Ease of</span>
+									<br />
+									<span style="font-size: 14px; font-weight: 600"
+										>Student Visa</span
+									>
+								</div>
+								<i class="fas fa-leaf"></i>
+								<i class="fas fa-leaf"></i>
+								<i class="fas fa-leaf"></i>
+								<i class="fas fa-leaf"></i>
+								<i class="fas fa-leaf"></i>
+							</div>
+						</div>
+
+						<div class="uk-padding-small">
+							<div>Courses offered</div>
+							<div class="courses">
+								<span class="tag">Architecture</span>
+								<span class="tag">Building and Planning</span>
+								<span class="tag">Art and Design</span>
+								<span class="tag">Business and Management Commerce</span>
+								<span class="tag">Computer Science and IT</span>
+								<span class="tag">Culinary Arts</span>
+								<span class="tag">Education and Training</span>
+								<span class="tag">Engineering</span>
+							</div>
+						</div>
+
+						<a class="btn btn-learn" href="#modal-full" uk-toggle>
+							<span class="uk-margin-small-right">Learn more</span>
+							<i class="fas fa-chevron-circle-right"></i
+						></a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- UIkit JS -->
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/js/uikit.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.6.13/dist/js/uikit-icons.min.js"></script>
+
+		<script>
+			const testimonials = [
+				{
+					name: "Cherian Devasia",
+					qualification:
+						"Master of Business Administration, Cardiff Metropolitan University, UK",
+					designation: "Managing Director",
+					organisation: "Thakidiyal Colour Lab",
+					location: "Kottayam, Kerala, India",
+					profile_pic: "./img/1.Cherian Devasia.jpg",
+					quote:
+						"Approaching VMN Connects was one of the most memorable decision I made in my life.  I enjoyed the entire stay In Malaysia and the education as life was filles with so much fun and enhancement. Proud to be the VMN Family",
+				},
+				{
+					name: "Kadiatou Sangare",
+					qualification:
+						"Master of Business Administration, Cardiff Metropolitan University, UK",
+					designation: "Sales Executive",
+					organisation: "Kenya Airways",
+					location: "Bamako, Mali",
+					profile_pic: "img/2.Kadiatou Sangare.jpg",
+					quote:
+						"As any other International student, I was so worried about my life in Malaysia before arrival. But then I met Mr Vijay at the Airport and things were so exciting from then and I sailed through my dream smoothly.",
+				},
+				{
+					name: "Ali Mafoud Senoussi",
+					qualification:
+						"Bachelor of Arts (Hons) Business Studies, Cardiff Metropolitan University, UK",
+					designation: "Managing Director",
+					organisation: "Safa World Trade",
+					location: "Ndjamena City, Chad",
+					profile_pic: "img/3.Ali Mafoud Senoussi.jpg",
+					quote:
+						"I got answers for the 100s of questions on the course I chose and the location. VMN made my life so easy and held my hands whenever I needed and it was of great help in my career. Thank you VMN.",
+				},
+				{
+					name: "Maryam Gafurova",
+					qualification:
+						"Master of Business Administration, Cardiff Metropolitan University, UK",
+					designation: "CEO",
+					organisation: "Marus Group LLP",
+					location: "Ashgabat, Turkmenistan",
+					profile_pic: "img/4.Maryam Gafurova.jpg",
+					quote:
+						"I enjoyed the entire days of my life in Malaysia and was so blessed to have a consultant who guided me throughout this journey and make my stay in Malaysia an unforgettable one",
+				},
+				{
+					name: "Absher Liyakath",
+					qualification:
+						"Master of Business Administration, Cardiff Metropolitan University, UK",
+					designation: "Logistic Coordinator",
+					organisation: "Aramex",
+					location: "Dubai, United Arab Emirates",
+					profile_pic: "img/5.Absher Liyakath.jpg",
+					quote:
+						"I learned how big the world actually is, and realized for the first time how much a part of that world I was. My mind grew, opened up. My heart changed. I became, essentially and fundamentally, who I am today. Amazing College and Campus life, I enjoyed living there and I learn so much.",
+				},
+				{
+					name: "Mohammed Sajad K M",
+					qualification:
+						"Master of Business Administration, Cardiff Metropolitan University, UK",
+					designation: "Proprietor",
+					organisation: "JIZ London Limited",
+					location: "Westham, London, United Kingdom",
+					profile_pic: "img/6.Mohammed Sajad K M.jpg",
+					quote:
+						"From my school days I was dreaming to settle down in the UK. Today after all those roller coaster ride, I am running a successful business in the United Kingdome.  Thanks to VMN for making my dream come true",
+				},
+				{
+					name: "Vishnu Mohan",
+					qualification:
+						"Bachelor of Arts (Hons) Business Studies, Cardiff Metropolitan University, UK",
+					designation: "Customer Success Specialist",
+					organisation: "Aramex",
+					location: "Dubai, United Arab Emirates",
+					profile_pic: "img/7 Vishnu Mohan.jpg",
+					quote:
+						"My quest for a recognised and affordable programme was fulfilled with my meeting with VMN in the presence of my father.  Today life took a big jump and I am sincerely thankful to VMN for all guidance throughout this journey.",
+				},
+				{
+					name: "Anas Mundo",
+					qualification:
+						"Master of Business Administration, Cardiff Metropolitan University, UK",
+					designation: "Director-Business Development",
+					organisation: "Mimber Business Solutions",
+					location: "Kerala, India",
+					profile_pic: "img/8.Anas Mundo.jpg",
+					quote:
+						"Education is a long time investment in life. My believes were made right and I managed to drive my life with success with the enormous guidance and friendship from VMN. Today I am not alone and feel proud to belong in the BIG Family. Together we strive.",
+				},
+				{
+					name: "Rahul Viswan",
+					qualification:
+						"Master of Business Administration, Cardiff Metropolitan University, UK",
+					designation: "Relashionship Officer",
+					organisation: "Standard Chartered Bank",
+					location: "Dubai, United Arab Emirates",
+					profile_pic: "img/9. Rahul Viswan.jpg",
+					quote:
+						"Great college , great people and a wonderful mentor Mr Vijay to help in each and everything.",
+				},
+				{
+					name: "Mohamed Zuhail Hashir",
+					qualification:
+						"Master of Business Administration, Cardiff Metropolitan University, UK",
+					designation: "Accountant",
+					organisation: "U Energy Central Gas Contracting LLC",
+					location: "Dubai, United Arab Emirates",
+					profile_pic: "img/10. Zuhail Hashir.jpg",
+					quote:
+						"It was a great experience with VMN and it gave me lots of connections, experience and opportunities to be part of it.",
+				},
+				{
+					name: "Mubarak bin Umer",
+					qualification:
+						"Master of Business Administration, Cardiff Metropolitan University, UK",
+					designation: "Sales Officer",
+					organisation: "Midway Building Materials",
+					location: "Doha, Qatar",
+					profile_pic: "img/11. Mubarak Umar.jpg",
+					quote:
+						"Sometimes right decisions in life travels through us for long distance. Choosing VMN was one of it. Really enjoy that connections and belongings",
+				},
+				{
+					name: "Nguyen Vo Hanh Phuc",
+					qualification:
+						"Master of Business Administration, University of Wales Trinity St David, UK",
+					designation: "Procurement Analysis",
+					organisation: "Jebsen & Jessen SDN BHD",
+					location: "Vietnam",
+					profile_pic: "img/12 Phuc Nguyen Vo Hanh.jpg",
+					quote:
+						"I was really benefited the assistance I received throughout the admission and the duration of the course. Wish VMN all the best.",
+				},
+				{
+					name: "Radwan Almograbi",
+					qualification:
+						"Master of Business Administration, University of Wales Trinity St David, UK",
+					designation: "Analyst",
+					organisation: "ITCan",
+					location: "Libya",
+					profile_pic: "img/13.Radwan Almograbi.jpg",
+					quote:
+						"Great experience and wonderful days. I wish all the best to the new students as they are gonna enjoy this.",
+				},
+				{
+					name: "Fazeela Yoosuf",
+					qualification:
+						"Master of Business Administration, University of Wales Trinity St David, UK",
+					designation: "Own Business",
+					organisation: "",
+					location: "Maldives",
+					profile_pic: "img/14. Fazeela Yoosuf.jpg",
+					quote:
+						"Great experience and good friends.  Enjoyed my stay In Malaysia and the exposures I had.  Thanks VMN for abundance of supports.",
+				},
+				{
+					name: "Jamshar Kunnathodi",
+					qualification:
+						"Master of Business Administration, Cardiff Metropolitan University, UK",
+					designation: "CEO",
+					organisation: "WestBerg International",
+					location: "Qatar, India & UK",
+					profile_pic: "img/JamsherNew.jpg",
+					quote:
+						"Malaysia was my stepping stone for my career and I always treasure those days which help me to build my career and achieve my dream. Thanks a lot to VMN for guiding me to choose the best and also continue the relationship after 10 years now.",
+				},
+				{
+					name: "Yasif Anamangadan",
+					qualification:
+						"Master of Business Administration, Cardiff Metropolitan University, UK",
+					designation: "Manager, Operations",
+					organisation: "Azalea Pharma LLC",
+					location: "Dubai, UAE",
+					profile_pic: "./img/16 Yasif Salih.jpg",
+					quote:
+						"I was among the first few who entered Malaysia for further studies and the experience and fun we had was unbelievable.  We were always guided and accompanied by VMN and life was so exciting those day.  We still grow with the family.",
+				},
+				{
+					name: "Ameen Al Rahman",
+					qualification:
+						"Master of Business Administration, Cardiff Metropolitan University, UK",
+					designation: "Business Coordinator",
+					organisation: "Al Subai Trading Riyadh",
+					location: "Saudi Arabia",
+					profile_pic: "./img/17 Ameen.jpg",
+					quote:
+						"Further Studies at Malaysia was one of the most exciting phase of my life was a real stepping stone for my career in the Middle east. Thanks to the enormous support from VMN during my early days and continuing this friendship after almost 1o years now.",
+				},
+				{
+					name: "Nimal Jose",
+					qualification:
+						"Master of Business Administration, Cardiff Metropolitan University, UK",
+					designation: "Marketing Research Analyst",
+					organisation: "ibird Brand Imaging Service",
+					location: "Dubai, UAE",
+					profile_pic: "./img/18 Nimal Jose.jpg",
+					quote:
+						"eye opener…to describe in one word.  I really had fabulous days in Malaysia and the friendship I developed with VMN was truly valuable. From the cricket games to the trip to Wayanad in Kerala everything was really precious.",
+				},
+			];
+
+			const partnerUniversities = [
+				{
+					name: "Cardiff Metropolitan University",
+					location: "United Kingdom",
+					image: "https://source.unsplash.com/3ALW9V3jNkc",
+				},
+				{
+					name: "Name of university",
+					location: "United Kingdom",
+					image: "https://source.unsplash.com/W9hjnF3M4QM",
+				},
+				{
+					name: "Name of university",
+					location: "United Kingdom",
+					image: "https://source.unsplash.com/d55fhArDES0",
+				},
+				{
+					name: "Name of university",
+					location: "United Kingdom",
+					image: "https://source.unsplash.com/wD1LRb9OeEo",
+				},
+				{
+					name: "Name of university",
+					location: "United Kingdom",
+					image: "https://source.unsplash.com/GvPceVqbxm4",
+				},
+				{
+					name: "Name of university",
+					location: "United Kingdom",
+					image: "https://source.unsplash.com/cXUOQWdRV4I",
+				},
+			];
+
+			const testimonialsDiv = document.getElementById("testimonials");
+			const partnerUniversitiesDiv = document.getElementById(
+				"partnerUniversities"
+			);
+
+			for (let i = 0; i < partnerUniversities.length; i++) {
+				const element = partnerUniversities[i];
+				partnerUniversitiesDiv.innerHTML += `
+				<li>
+
+					<a href="#modal-university" uk-toggle>
+					<div class="uk-panel">
+						<img
+							src="${element.image}"
+							alt=""
+							style="
+								height: 100%;
+								object-fit: cover;
+								border-radius: 10px 10px 0 0;
+							"
+						/>
+						<div class="uk-position-bottom uk-panel">
+							<div
+								style="
+								background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(0,0,0,1));
+									/* height: 100px; */
+									text-align: center;
+									padding: 40px 20px 10px 20px;
+								"
+							>
+								<div class="uk-text-bold">
+									${element.name}
+								</div>
+								<div>${element.location}</div>
+							</div>
+						</div>
+					</div>
+					</a>
+				</li>`;
+			}
+
+			for (let i = 0; i < testimonials.length; i++) {
+				const element = testimonials[i];
+
+				testimonialsDiv.innerHTML += `
+				<li>
+					
+					<div
+						class="uk-card uk-card-default uk-card-body card-testimonial"
+					>
+						<img src="${element.profile_pic}" alt="" />
+						<div class="uk-margin-medium-top">
+							<span uk-icon="icon: quote-right; ratio: 2"></span>
+						</div>
+						<div class="uk-margin-small-top uk-text-small">
+							${element.quote}
+						</div>
+						<div class="uk-margin-small-top" style="line-height: 1">
+							<div class="uk-text-bold">${element.name}</div>
+							<div class="uk-text-italic uk-text-small">${element.designation}</div>
+							<div class="uk-margin-small-top uk-text-bolder">${element.organisation}</div>
+							<div class="uk-text-small">${element.location}</div>
+						</div>
+					</div>	
+					
+				</li>
+				`;
+			}
+		</script>
+	</body>
+</html>
